@@ -1,20 +1,34 @@
-import React from 'react'
-import {ImgWrapper, Img, Link, Background, ButtonWrapper} from './styled'
+import {CardItem, Img, CardLink, Background, ButtonWrapper, CardFooter, CardTitle} from './styled'
 import Button from '../Button/Button'
+import Link from 'next/link'
+
 
 const Card = ({width}) => {
   return (
-    <ImgWrapper width={width}>
-      <Background/>
-      <Link>
-        <Img src='https://scientificrussia.ru/images/b/teb-full.jpg' alt="123123" />
+
+    <CardItem width={width}>
+      <Link href="/detailed">
+        <Background/>
       </Link>
-      <ButtonWrapper>
-        <Button>
-          Добавить
-        </Button>
-      </ButtonWrapper>
-    </ImgWrapper>
+
+      <CardLink>
+        <Img src='https://scientificrussia.ru/images/b/teb-full.jpg' alt="123123" />
+      </CardLink>
+
+      <CardFooter>
+        <Link href="/detailed">
+          <CardTitle>
+            Lorem ipsum dolor sit amet.
+          </CardTitle>
+        </Link>
+
+        <ButtonWrapper>
+          <Button>
+            UPDATE
+          </Button>
+        </ButtonWrapper>
+      </CardFooter>
+    </CardItem>
   )
 }
 

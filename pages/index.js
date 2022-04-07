@@ -14,15 +14,10 @@ export default function Home() {
       </Head>
 
       <div>
-        <Button>
-          принять
-        </Button>
-
         <Card
           width="250"
           hiegth="380"
         />
-
       </div>
 
 

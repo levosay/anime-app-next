@@ -1,10 +1,11 @@
 import {Header} from './styled'
+import NavBar from '../NavBar/NavBar'
 
 const PageHeader = () => {
   return (
     <Header>
 
-      <div>323123</div>
+      <NavBar/>
     </Header>
   )
 }

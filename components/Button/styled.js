@@ -32,6 +32,11 @@ export const Btn = styled.button`
     cursor: pointer;
   }
   
+  &:active {
+    background: ${PALETTE.lightPrimary};
+    border: 2px solid ${PALETTE.white};
+  }
+  
   &:hover:before {
     left: 150px;
     transition: 0.5s ease-in-out;
