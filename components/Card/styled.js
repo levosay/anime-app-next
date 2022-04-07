@@ -12,6 +12,8 @@ export const ImgWrapper = styled.div`
   -moz-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   
+  margin: auto;
+  
 `
 
 export const Img = styled.img`
@@ -19,8 +21,8 @@ export const Img = styled.img`
   height: 100%;
   object-fit: cover;
   transition: opacity 124ms linear, transform 124ms linear;
+  opacity: 0.2;
 `
-
 
 
 export const Background = styled.div`
@@ -30,13 +32,15 @@ export const Background = styled.div`
   opacity: 0.2;
   transition: .2s;
 
-  &:hover {
-    background: ${PALETTE.midBlue};
-    
-    & ${Img} {
-      opacity: 0.9;
-      transform: scale(1.05);
-    }
+  // &:hover {
+  //   background: ${PALETTE.midBlue};
+  //  
+  //  
+  // }
+
+  &:hover ${Img} {
+    opacity: 0.9;
+    transform: scale(1.05);
   }
 `
 
@@ -57,5 +61,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 
 `
+
+
 
 
