@@ -11,9 +11,7 @@ export const ImgWrapper = styled.div`
   -webkit-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
-  
   margin: auto;
-  
 `
 
 export const Img = styled.img`
@@ -21,7 +19,7 @@ export const Img = styled.img`
   height: 100%;
   object-fit: cover;
   transition: opacity 124ms linear, transform 124ms linear;
-  opacity: 0.2;
+  opacity: 1;
 `
 
 
@@ -29,17 +27,10 @@ export const Background = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 0.2;
   transition: .2s;
 
-  // &:hover {
-  //   background: ${PALETTE.midBlue};
-  //  
-  //  
-  // }
-
   &:hover ${Img} {
-    opacity: 0.9;
+    opacity: 0.5;
     transform: scale(1.05);
   }
 `
