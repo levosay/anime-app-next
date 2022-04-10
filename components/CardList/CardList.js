@@ -3,10 +3,10 @@ import Button from '../Button/Button'
 import Link from 'next/link'
 
 
-const Card = ({width}) => {
-  return (
+const CardList = () => {
 
-    <CardItem width={width}>
+  return (
+    <CardItem>
       <Link href="/detailed">
         <Background/>
       </Link>
@@ -29,7 +29,11 @@ const Card = ({width}) => {
         </ButtonWrapper>
       </CardFooter>
     </CardItem>
+
   )
 }
 
-export default Card
+
+export default CardList
+
+
