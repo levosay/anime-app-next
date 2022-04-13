@@ -4,13 +4,9 @@ import CardList from '../components/CardList/CardList'
 import axios from 'axios'
 import {useState} from 'react'
 
-const BASE_URL = 'https://kitsu.io/api/edge/anime?page%5Blimit%5D=20&page%5Boffset%5D=$10'
-
 
 export default function Home(props) {
-  const [data, setData] = useState(props.props.data)
-
-  console.log('data ', data)
+  const [data, setData] = useState(props.data)
 
   return (
     <MainLayout>
@@ -20,13 +16,17 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <CardList/>
+      <CardList
+        animeItems={data}
+      />
 
     </MainLayout>
   )
 }
 
-Home.getInitialProps = async () => {
-  const response = await axios.get(BASE_URL)
-  return { data: response.data }
+export const getStaticProps = async () => {
+  const response = await axios.get(process.env.NEXT_PUBLIC_BASE_URL + '10')
+  return {
+    props: response.data
+  }
 }

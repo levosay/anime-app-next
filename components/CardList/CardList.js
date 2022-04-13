@@ -1,35 +1,45 @@
-import {CardItem, Img, CardLink, Background, ButtonWrapper, CardFooter, CardTitle} from './styled'
+import {CardItem, Img, CardLink, Background, ButtonWrapper, CardFooter, CardTitle, CardWrapper} from './styled'
 import Button from '../Button/Button'
 import Link from 'next/link'
 
 
-const CardList = () => {
+const CardList = ({ animeItems }) => {
 
   return (
-    <CardItem>
-      <Link href="/detailed">
-        <Background/>
-      </Link>
+    <CardWrapper>
+      {animeItems.map(item => (
+        <Link
+          href={`/detailed/${item.id}`}
+          passHref
+          key={item.id}
 
-      <CardLink>
-        <Img src='https://scientificrussia.ru/images/b/teb-full.jpg' alt="123123" />
-      </CardLink>
+        >
+          <CardItem
+            id={item.id}
+          >
 
-      <CardFooter>
-        <Link href="/detailed">
-          <CardTitle>
-            Lorem ipsum dolor sit amet.
-          </CardTitle>
+            <Background/>
+            <Img src={item.attributes.posterImage.large} alt={item.attributes.canonicalTitle} />
+
+
+            <CardFooter>
+              <CardTitle>
+                {item.attributes.canonicalTitle}
+              </CardTitle>
+
+              <ButtonWrapper>
+                <Button>
+                  UPDATE
+                </Button>
+              </ButtonWrapper>
+            </CardFooter>
+          </CardItem>
         </Link>
+      ))}
 
-        <ButtonWrapper>
-          <Button>
-            UPDATE
-          </Button>
-        </ButtonWrapper>
-      </CardFooter>
-    </CardItem>
 
+
+    </CardWrapper>
   )
 }
 

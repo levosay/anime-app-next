@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import {PALETTE} from '../../constant/constants'
 
+export const CardWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+`
+
 export const Img = styled.img`
   width: 100%;
   height: 100%;
