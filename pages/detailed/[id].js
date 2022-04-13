@@ -1,5 +1,5 @@
 import MainLayout from '../../layouts/MainLayout'
-import axios from 'axios'
+import getData from '../api'
 
 const Detailed = (props) => {
 
@@ -11,9 +11,9 @@ const Detailed = (props) => {
   )
 }
 export const getStaticPaths = async ()  => {
-  const { data } = await axios.get(process.env.NEXT_PUBLIC_BASE_URL + '10')
+  const {data} = await getData(process.env.NEXT_PUBLIC_FIRST_URL)
 
-  const paths = data.data.map((item) => {
+  const paths = data.map((item) => {
     return {
       params: {
         id: item.id
@@ -33,7 +33,7 @@ export const getStaticProps = async ({ params }) => {
       notFound: true
     }
   } else {
-    const { data } = await axios.get(`${process.env.NEXT_PUBLIC_FIND_URL}${params.id}`)
+    const data = await getData(`${process.env.NEXT_PUBLIC_FIND_URL}${params.id}`)
     return {
       props: data
     }

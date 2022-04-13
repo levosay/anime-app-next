@@ -1,9 +1,10 @@
-import {CardItem, Img, CardLink, Background, ButtonWrapper, CardFooter, CardTitle, CardWrapper} from './styled'
+import {CardItem, Img, Background, ButtonWrapper, CardFooter, CardTitle, CardWrapper} from './styled'
 import Button from '../Button/Button'
 import Link from 'next/link'
 
 
 const CardList = ({ animeItems }) => {
+
 
   return (
     <CardWrapper>
