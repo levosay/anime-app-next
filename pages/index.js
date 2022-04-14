@@ -5,39 +5,9 @@ import {useEffect, useState} from 'react'
 import getData from './api'
 
 export default function Home(props) {
-  const [data, setData] = useState([])
-  const [currentPage, setCurrentPage] = useState(0)
-  const [fetching, setFetching] = useState(true)
+  const [data, setData] = useState(props.data)
 
 
-  useEffect(() => {
-    if (fetching) {
-      getData(`https://kitsu.io/api/edge/anime?page%5Blimit%5D=20&page%5Boffset%5D=${currentPage}`)
-        .then((response) => {
-          setData(((prevData) => prevData.concat(response.data)))
-          setCurrentPage((prevState) => prevState + 20)
-          console.log('response ', response)
-        })
-        .finally(() => setFetching(false))
-    }
-    // eslint-disable-next-line
-  }, [fetching])
-
-  const scrollHandler = (e) => {
-    const { scrollHeight } = e.target.documentElement
-    const { scrollTop } = e.target.documentElement
-    const { innerHeight } = window
-    if (scrollHeight - (scrollTop + innerHeight) < 100) setFetching(true)
-  }
-  useEffect(() => {
-    if (!localStorage.getItem('favorite') || !localStorage.getItem('favorite').length) {
-      localStorage.setItem('favorite', JSON.stringify([]))
-    }
-    document.addEventListener('scroll', scrollHandler)
-    return () => {
-      document.removeEventListener('scroll', scrollHandler)
-    }
-  }, [])
 
 
 

@@ -3,15 +3,16 @@ import getData from '../api'
 
 const Detailed = (props) => {
 
-  console.log('_-___----- ', props.data)
+  // console.log('_-___----- ', props.data)
   return (
     <MainLayout>
-      <h1>3213123</h1>
+      <h1>DETAIL</h1>
+      <h1>{props.data.attributes.canonicalTitle}</h1>
     </MainLayout>
   )
 }
 export const getStaticPaths = async ()  => {
-  const {data} = await getData(process.env.NEXT_PUBLIC_FIRST_URL)
+  const {data} = await getData(process.env.NEXT_PUBLIC_BASE_URL)
 
   const paths = data.map((item) => {
     return {
