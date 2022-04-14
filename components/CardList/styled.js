@@ -12,16 +12,30 @@ export const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .1s linear;
+  transition: transform .15s linear;
 `
 
 export const Background = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  transition: opacity .1s ease-in;
+  transition: opacity .15s ease-in;
   background: ${PALETTE.midBlue};
   opacity: 0;
+`
+
+export const CardFooter = styled.div`
+  display: flex;
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 18px;
+  transition: opacity .15s ease-in;
+  opacity: 0;
+  z-index: 3;
 `
 
 export const CardItem = styled.div`
@@ -37,13 +51,17 @@ export const CardItem = styled.div`
   margin: auto;
 
   &:hover {
+    ${CardFooter} {
+      opacity: 1;
+    }
+    
     ${Background} {
-      opacity: 0.3;
+      opacity: 0.4;
       z-index: 2;
     }
     
     ${Img} {
-      transform: scale(1.03);
+      transform: scale(1.05);
     }
   }
 `
@@ -62,17 +80,7 @@ export const ButtonWrapper = styled.div`
   justify-content: center;
 `
 
-export const CardFooter = styled.div`
-  position: absolute;
-  bottom: 28px;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 18px;
-  z-index: 3;
-`
+
 
 export const CardTitle = styled.h4`
   text-align: center;
