@@ -5,6 +5,11 @@ export const Nav = styled.div`
   align-items: center;
 `
 
+export const LogoIcon = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
 export const NavLink = styled.span`
   font-size: 38px;
   font-weight: bold;

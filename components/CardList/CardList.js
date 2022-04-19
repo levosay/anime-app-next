@@ -16,7 +16,6 @@ const CardList = ({ animeItems }) => {
     )
     setCards((post) => [...post, ...data])
   }
-  console.log('____ ', cards)
 
   return (
     <InfiniteScroll

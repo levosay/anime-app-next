@@ -3,12 +3,12 @@ import MainLayout from '../layouts/MainLayout'
 import CardList from '../components/CardList/CardList'
 import {useEffect, useState} from 'react'
 import getData from './api'
+import getConfig from 'next/config';
+
+export const {publicRuntimeConfig: { FIRST_URL }} = getConfig();
 
 export default function Home(props) {
   const [data, setData] = useState(props.data)
-
-
-
 
 
   return (
@@ -26,7 +26,7 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async () => {
-  const data = await getData(process.env.NEXT_PUBLIC_FIRST_URL)
+  const data = await getData(FIRST_URL)
 
   return {
     props: data

@@ -1,7 +1,7 @@
 import PageHeader from '../../components/PageHeader/PageHeader'
 import {Container} from './styled'
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   return (
     <>
       <PageHeader />

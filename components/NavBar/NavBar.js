@@ -2,14 +2,15 @@ import {Nav, NavLink} from './styled'
 import Link from 'next/link'
 
 const NavBar = () => {
+
   return (
     <Nav>
-      <Link href="/">
+      <Link href="/" passHref>
         <NavLink>
           Home
         </NavLink>
       </Link>
-      <Link href="/favorite">
+      <Link href="/favorite" passHref>
         <NavLink>
           Favorite
         </NavLink>
