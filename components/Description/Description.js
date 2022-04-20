@@ -1,9 +1,12 @@
-import {DescFace, DescImg, DescImgWrap, DescInfo, DescLable, DescSpan, DescText, DescTitle, DescWrap} from './styled'
+import {
+  DescFace, DescImg, DescImgWrap, DescInfo, DescLable, DescSpan, DescText, DescTitle, DescWrap
+} from './styled'
 import Button from '../Button/Button'
 import {Progress, ProgressLine} from '../../pages/detailed/styled'
 
 const Description = ({
-  ageRating, averageRating, title, img, description, startDate, endDate, status, youtubeVideoId
+  ageRating, averageRating, title, img, description,
+  startDate, endDate, status, youtubeVideoId
 }) => {
   const drawRating = (value = 50) => {
     const roundedValue = `${Math.floor(value)}%`
