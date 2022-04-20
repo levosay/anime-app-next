@@ -2,13 +2,15 @@ import styled from 'styled-components'
 import { PALETTE } from '../../constant/constants'
 
 export const Btn = styled.button`
+  width: 200px;
   min-width: 188px;
   text-decoration: none;
   padding: 10px 30px;
   position: relative;
   overflow: hidden;
+  margin: auto;
   border: 2px solid ${PALETTE.primary};
-  border-radius: 8px;
+  border-radius: 10px;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   transition: 0.2s ease-in-out;

@@ -1,24 +1,38 @@
 import MainLayout from '../../layouts/MainLayout'
 import getData from '../api'
 import getConfig from 'next/config';
+import {DetailedDescription, DetailedInfo, Progress, ProgressLine} from './styled'
+import Description from '../../components/Description/Description'
 
 export const {publicRuntimeConfig: { FIRST_URL, FIND_URL }} = getConfig();
 
 const Detailed = (props) => {
+  console.log('props ', props)
 
-  // console.log('_-___----- ', props.data)
+
   return (
     <MainLayout>
-      <h1>DETAIL</h1>
-      <h1>{props.data.attributes.canonicalTitle}</h1>
+      <Description
+        ageRating={props.attributes.ageRating}
+        averageRating={props.attributes.averageRating}
+        title={props.attributes.canonicalTitle}
+        img={props.attributes.posterImage.large
+          ? props.attributes.posterImage.large
+          : null}
+
+        description={props.attributes.description}
+        startDate={props.attributes.startDate}
+        endDate={props.attributes.endDate}
+        episodeCount={props.attributes.episodeCount}
+        status={props.attributes.status}
+        youtubeVideoId={props.attributes.youtubeVideoId}
+      />
     </MainLayout>
   )
 }
 
-export const getStaticPaths = async ({ params })  => {
+export const getStaticPaths = async ()  => {
   const { data } = await getData(FIRST_URL.toString())
-
-  console.log('params1 ', params)
 
   const paths = data.map((item) => {
     return {
@@ -35,20 +49,17 @@ export const getStaticPaths = async ({ params })  => {
 }
 
 export const getStaticProps = async ({ params }) => {
-
-  console.log('params2 ', params)
-
   if (!params) {
     return {
       notFound: true
     }
   } else {
-    const data = await getData(`${FIND_URL}${params.id}`)
+    const { data } = await getData(`${FIND_URL}${params.id}`)
+
     return {
       props: data
     }
   }
-
 }
 
 export default Detailed

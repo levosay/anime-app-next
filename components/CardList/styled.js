@@ -40,10 +40,10 @@ export const CardFooter = styled.div`
 
 export const CardItem = styled.div`
   position: relative;
-  width: ${props => props.width || 250}px;
-  height: ${props => props.height || 380}px;
+  width: 250px;
+  height: 380px;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
   -webkit-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
@@ -73,14 +73,6 @@ export const CardLink = styled.a`
   text-decoration: none;
   cursor: pointer;
 `
-
-export const ButtonWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`
-
-
 
 export const CardTitle = styled.h4`
   text-align: center;

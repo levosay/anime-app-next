@@ -6,8 +6,7 @@ export const Nav = styled.div`
 `
 
 export const LogoIcon = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 100px;
 `
 
 export const NavLink = styled.span`

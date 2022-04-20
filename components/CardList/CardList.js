@@ -46,11 +46,9 @@ const CardList = ({ animeItems }) => {
                   {item.attributes.canonicalTitle}
                 </CardTitle>
 
-                <ButtonWrapper>
-                  <Button>
-                    UPDATE
-                  </Button>
-                </ButtonWrapper>
+                <Button>
+                  UPDATE
+                </Button>
               </CardFooter>
             </CardItem>
           </Link>

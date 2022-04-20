@@ -1,10 +1,11 @@
-import {Nav, NavLink} from './styled'
+import {LogoIcon, Nav, NavLink} from './styled'
 import Link from 'next/link'
 
 const NavBar = () => {
 
   return (
     <Nav>
+      <LogoIcon src={'../../public/logo1.png'} />
       <Link href="/" passHref>
         <NavLink>
           Home
