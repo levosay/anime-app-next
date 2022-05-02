@@ -6,7 +6,7 @@ import {Progress, ProgressLine} from '../../pages/detailed/styled'
 
 const Description = ({
   ageRating, averageRating, title, img, description,
-  startDate, endDate, status, youtubeVideoId
+  startDate, endDate, status
 }) => {
   const drawRating = (value = 50) => {
     const roundedValue = `${Math.floor(value)}%`
@@ -59,9 +59,7 @@ const Description = ({
         <DescText>
           {description}
         </DescText>
-
       </DescInfo>
-
     </DescWrap>
   )
 }

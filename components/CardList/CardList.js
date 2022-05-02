@@ -4,9 +4,11 @@ import Link from 'next/link'
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useState} from 'react'
 import getData from '../../pages/api'
+import {useActions} from '../../hooks/useActions'
 
 
 const CardList = ({ animeItems }) => {
+  const {setFavorite, removeFavorite} =useActions()
   const [cards, setCards] = useState(animeItems)
   const [hasMore, setHasMore] = useState(true)
 
@@ -15,6 +17,18 @@ const CardList = ({ animeItems }) => {
       process.env.NEXT_PUBLIC_FIRST_URL + cards.length
     )
     setCards((post) => [...post, ...data])
+  }
+
+  const addFavorite = (event, id, key, href, src, title, alt) => {
+    event.stopPropagation()
+    console.log('_______')
+    setFavorite({
+      id: id, key: key, href: href, src: src, title: title, alt: alt
+    })
+  }
+
+  const remFavorite = (id) => {
+    removeFavorite(id)
   }
 
   return (
@@ -46,7 +60,17 @@ const CardList = ({ animeItems }) => {
                   {item.attributes.canonicalTitle}
                 </CardTitle>
 
-                <Button>
+                <Button
+                  // onClick={addFavorite}
+                  onClick={addFavorite}
+                  id={item.id}
+                  key={item.attributes.canonicalTitle}
+                  href={`/detailed/${item.id}`}
+                  src={item.attributes.posterImage.large}
+                  alt={item.attributes.canonicalTitle}
+                  title={item.attributes.canonicalTitle}
+
+                >
                   UPDATE
                 </Button>
               </CardFooter>
