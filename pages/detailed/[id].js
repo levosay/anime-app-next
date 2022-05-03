@@ -7,9 +7,6 @@ import Description from '../../components/Description/Description'
 export const {publicRuntimeConfig: { FIRST_URL, FIND_URL }} = getConfig();
 
 const Detailed = (props) => {
-  console.log('props ', props)
-
-
   return (
     <MainLayout>
       <Description

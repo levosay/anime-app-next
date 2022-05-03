@@ -10,7 +10,6 @@ export const {publicRuntimeConfig: { FIRST_URL }} = getConfig();
 export default function Home(props) {
   const [data, setData] = useState(props.data)
 
-
   return (
     <MainLayout>
       <Head>

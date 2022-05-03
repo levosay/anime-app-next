@@ -8,7 +8,6 @@ const Favorite = () => {
   return (
     <MainLayout>
       <h1>FAVORITE</h1>
-
       {favoriteList.length
         ?
         <CardList
@@ -18,7 +17,6 @@ const Favorite = () => {
         :
         'список пуст'
       }
-
     </MainLayout>
   )
 }

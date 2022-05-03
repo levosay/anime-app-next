@@ -43,7 +43,6 @@ const Description = ({
           />
           {drawRating(averageRating)}
         </DescImgWrap>
-
         <DescSpan>
           {startDate} - {endDate}
         </DescSpan>
@@ -51,7 +50,6 @@ const Description = ({
           Добавить
         </Button>
       </DescFace>
-
       <DescInfo>
         <DescTitle>
           {title}

@@ -62,19 +62,15 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
             passHref
           >
             <CardItem>
-
               <Background/>
               <Img
                 src={item.attributes.posterImage.large}
                 alt={item.attributes.canonicalTitle}
               />
-
-
               <CardFooter>
                 <CardTitle>
                   {item.attributes.canonicalTitle}
                 </CardTitle>
-
                 <Button
                   onClick={(e) =>  isFavorite(item.id) ?
                     remFavorite(e, item.id)
@@ -93,13 +89,10 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
             </CardItem>
           </Link>
         ))}
-
       </CardWrapper>
     </InfiniteScroll>
-
   )
 }
-
 
 export default CardList
 

@@ -2,7 +2,6 @@ import {combineReducers} from 'redux'
 import {favoriteReducer} from './favoriteReducer'
 import {HYDRATE} from 'next-redux-wrapper'
 
-
 const rootReducer = combineReducers({
   favorite: favoriteReducer
 })
