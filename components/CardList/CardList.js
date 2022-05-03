@@ -2,15 +2,17 @@ import {CardItem, Img, Background, CardFooter, CardTitle, CardWrapper} from './s
 import Button from '../Button/Button'
 import Link from 'next/link'
 import InfiniteScroll from "react-infinite-scroll-component";
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import getData from '../../pages/api'
 import {useActions} from '../../hooks/useActions'
+import {useSelector} from 'react-redux'
 
 
-const CardList = ({ animeItems }) => {
+const CardList = ({ animeItems, hasMoreFavorite = true }) => {
+  const favoriteList = useSelector(state => state.favorite)
   const {setFavorite, removeFavorite} =useActions()
   const [cards, setCards] = useState(animeItems)
-  const [hasMore, setHasMore] = useState(true)
+  const [hasMore, setHasMore] = useState(hasMoreFavorite)
 
   const getMorePost = async () => {
     const {data} = await getData(
@@ -19,17 +21,31 @@ const CardList = ({ animeItems }) => {
     setCards((post) => [...post, ...data])
   }
 
-  const addFavorite = (event, id, key, href, src, title, alt) => {
+  const isFavorite = (id) => {
+    return favoriteList.some(item => item.id === id)
+  }
+
+  const addFavorite = (event, id, key, src, title) => {
     event.stopPropagation()
-    console.log('_______')
     setFavorite({
-      id: id, key: key, href: href, src: src, title: title, alt: alt
+      id: id,
+      attributes: {
+        canonicalTitle: title,
+        posterImage: {
+          large: src,
+        }
+      },
     })
   }
 
-  const remFavorite = (id) => {
+  const remFavorite = (event, id) => {
+    event.stopPropagation()
     removeFavorite(id)
   }
+
+  useEffect(() => {
+    setCards(animeItems)
+  }, [favoriteList])
 
   return (
     <InfiniteScroll
@@ -37,7 +53,6 @@ const CardList = ({ animeItems }) => {
       dataLength={cards.length}
       hasMore={hasMore}
       loader={<h3> Loading...</h3>}
-      endMessage={<div>Nothing more to show</div>}
     >
       <CardWrapper>
         {cards.map(item => (
@@ -61,17 +76,18 @@ const CardList = ({ animeItems }) => {
                 </CardTitle>
 
                 <Button
-                  // onClick={addFavorite}
-                  onClick={addFavorite}
-                  id={item.id}
-                  key={item.attributes.canonicalTitle}
-                  href={`/detailed/${item.id}`}
-                  src={item.attributes.posterImage.large}
-                  alt={item.attributes.canonicalTitle}
-                  title={item.attributes.canonicalTitle}
-
+                  onClick={(e) =>  isFavorite(item.id) ?
+                    remFavorite(e, item.id)
+                    :
+                    addFavorite(
+                    e,
+                    item.id,
+                    item.attributes.canonicalTitle,
+                    item.attributes.posterImage.large,
+                    item.attributes.canonicalTitle,
+                  )}
                 >
-                  UPDATE
+                  {isFavorite(item.id) ? 'Remove' : 'Add to favorites'}
                 </Button>
               </CardFooter>
             </CardItem>
