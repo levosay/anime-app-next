@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import MainLayout from '../layouts/MainLayout'
 import CardList from '../components/CardList/CardList'
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import getData from './api'
 import getConfig from 'next/config';
 

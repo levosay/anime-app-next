@@ -13,10 +13,11 @@ const Detailed = (props) => {
         ageRating={props.attributes.ageRating}
         averageRating={props.attributes.averageRating}
         title={props.attributes.canonicalTitle}
-        img={props.attributes.posterImage.large
+        img={
+        props.attributes.posterImage.large
           ? props.attributes.posterImage.large
-          : null}
-
+          : null
+      }
         description={props.attributes.description}
         startDate={props.attributes.startDate}
         endDate={props.attributes.endDate}

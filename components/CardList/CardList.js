@@ -7,10 +7,9 @@ import getData from '../../pages/api'
 import {useActions} from '../../hooks/useActions'
 import {useSelector} from 'react-redux'
 
-
 const CardList = ({ animeItems, hasMoreFavorite = true }) => {
   const favoriteList = useSelector(state => state.favorite)
-  const {setFavorite, removeFavorite} =useActions()
+
   const [cards, setCards] = useState(animeItems)
   const [hasMore, setHasMore] = useState(hasMoreFavorite)
 
@@ -25,23 +24,7 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
     return favoriteList.some(item => item.id === id)
   }
 
-  const addFavorite = (event, id, key, src, title) => {
-    event.stopPropagation()
-    setFavorite({
-      id: id,
-      attributes: {
-        canonicalTitle: title,
-        posterImage: {
-          large: src,
-        }
-      },
-    })
-  }
 
-  const remFavorite = (event, id) => {
-    event.stopPropagation()
-    removeFavorite(id)
-  }
 
   useEffect(() => {
     setCards(animeItems)
@@ -72,16 +55,9 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
                   {item.attributes.canonicalTitle}
                 </CardTitle>
                 <Button
-                  onClick={(e) =>  isFavorite(item.id) ?
-                    remFavorite(e, item.id)
-                    :
-                    addFavorite(
-                    e,
-                    item.id,
-                    item.attributes.canonicalTitle,
-                    item.attributes.posterImage.large,
-                    item.attributes.canonicalTitle,
-                  )}
+                  id={item.id}
+                  title={item.attributes.canonicalTitle}
+                  src={item.attributes.posterImage.large}
                 >
                   {isFavorite(item.id) ? 'Remove' : 'Add to favorites'}
                 </Button>

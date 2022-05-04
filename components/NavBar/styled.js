@@ -7,6 +7,7 @@ export const Nav = styled.div`
 
 export const LogoIcon = styled.img`
   width: 100px;
+  margin-right: 100px;
 `
 
 export const NavLink = styled.span`
@@ -14,7 +15,8 @@ export const NavLink = styled.span`
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 1px 1px 3px #666;
-  color: #f5f5f7;
+  //color: #f5f5f7;
+  color: ${props => props.color || '#f5f5f7'};
   cursor: pointer;
 
   &:not(:last-child) {

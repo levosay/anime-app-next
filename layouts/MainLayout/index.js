@@ -4,8 +4,15 @@ import {Container} from './styled'
 const MainLayout = ({ children }) => {
   return (
     <>
-      <PageHeader />
-      <Container>
+      <Container
+        background={true}
+        width={false}
+      >
+        <PageHeader />
+      </Container>
+      <Container
+        width={true}
+      >
         {children}
       </Container>
     </>
