@@ -10,6 +10,7 @@ const Detailed = (props) => {
   return (
     <MainLayout>
       <Description
+        id={props.id}
         ageRating={props.attributes.ageRating}
         averageRating={props.attributes.averageRating}
         title={props.attributes.canonicalTitle}

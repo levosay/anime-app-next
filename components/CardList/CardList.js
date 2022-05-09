@@ -4,7 +4,6 @@ import Link from 'next/link'
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useEffect, useState} from 'react'
 import getData from '../../pages/api'
-import {useActions} from '../../hooks/useActions'
 import {useSelector} from 'react-redux'
 
 const CardList = ({ animeItems, hasMoreFavorite = true }) => {
@@ -19,12 +18,6 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
     )
     setCards((post) => [...post, ...data])
   }
-
-  const isFavorite = (id) => {
-    return favoriteList.some(item => item.id === id)
-  }
-
-
 
   useEffect(() => {
     setCards(animeItems)
@@ -58,9 +51,7 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
                   id={item.id}
                   title={item.attributes.canonicalTitle}
                   src={item.attributes.posterImage.large}
-                >
-                  {isFavorite(item.id) ? 'Remove' : 'Add to favorites'}
-                </Button>
+                />
               </CardFooter>
             </CardItem>
           </Link>

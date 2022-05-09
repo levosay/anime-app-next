@@ -1,15 +1,9 @@
 import {LogoIcon, Nav, NavLink} from './styled'
 import Link from 'next/link'
-import {useState} from 'react'
 import {useRouter} from 'next/router'
 
-const NavBar = (props) => {
+const NavBar = () => {
   const router = useRouter()
-  const [active, setActive] = useState(router.pathname)
-
-
-
-  console.log('_____ ', router.pathname)
 
   return (
     <Nav>
@@ -33,7 +27,6 @@ const NavBar = (props) => {
 }
 
 export const getStaticProps = async ({query}) => {
-
   return {
     props: query
   }

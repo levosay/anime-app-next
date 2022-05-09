@@ -6,7 +6,7 @@ import {Progress, ProgressLine} from '../../pages/detailed/styled'
 
 const Description = ({
   ageRating, averageRating, title, img, description,
-  startDate, endDate, status
+  startDate, endDate, status, id
 }) => {
   const drawRating = (value = 50) => {
     const roundedValue = `${Math.floor(value)}%`
@@ -24,7 +24,6 @@ const Description = ({
 
   return (
     <DescWrap>
-
       <DescFace>
         <DescImgWrap>
           <DescLable
@@ -46,9 +45,11 @@ const Description = ({
         <DescSpan>
           {startDate} - {endDate}
         </DescSpan>
-        <Button>
-          Добавить
-        </Button>
+        <Button
+          id={id}
+          title={title}
+          src={img}
+        />
       </DescFace>
       <DescInfo>
         <DescTitle>
