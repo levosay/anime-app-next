@@ -1,8 +1,9 @@
 import {
-  DescFace, DescImg, DescImgWrap, DescInfo, DescLable, DescSpan, DescText, DescTitle, DescWrap
+  DescFace, DescImg, DescImgWrap, DescInfo,
+  DescLable, DescSpan, DescText, DescTitle,
+  DescWrap, Progress, ProgressLine
 } from './styled'
 import Button from '../Button/Button'
-import {Progress, ProgressLine} from '../../pages/detailed/styled'
 
 const Description = ({
   ageRating, averageRating, title, img, description,

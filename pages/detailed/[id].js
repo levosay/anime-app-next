@@ -1,7 +1,6 @@
 import MainLayout from '../../layouts/MainLayout'
 import getData from '../api'
 import getConfig from 'next/config';
-import {DetailedDescription, DetailedInfo, Progress, ProgressLine} from './styled'
 import Description from '../../components/Description/Description'
 
 export const {publicRuntimeConfig: { FIRST_URL, FIND_URL }} = getConfig();

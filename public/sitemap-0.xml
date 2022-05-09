@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://example.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/favorite</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/1</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/2</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/3</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/4</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/5</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/6</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/7</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/8</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/9</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.033Z</lastmod></url>
+<url><loc>https://example.com/detailed/10</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/11</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/12</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/13</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/14</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/15</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/16</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/17</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/18</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/19</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+<url><loc>https://example.com/detailed/20</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-05-09T09:15:16.034Z</lastmod></url>
+</urlset>
