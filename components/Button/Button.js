@@ -1,8 +1,9 @@
-import { Btn } from './styled'
 import {useActions} from '../../hooks/useActions'
 import {useSelector} from 'react-redux'
 
-const Button = ({onClick, ...props}) => {
+import { Btn } from './styled'
+
+const Button = ({onClick, id, src, title, ...props}) => {
   const favoriteList = useSelector(state => state.favorite)
   const {setFavorite, removeFavorite} =useActions()
 
@@ -30,19 +31,19 @@ const Button = ({onClick, ...props}) => {
 
   return (
     <Btn
-      onClick={(e) => isFavorite(props.id) ?
-        remFavorite(e, props.id)
+      onClick={(e) => isFavorite(id) ?
+        remFavorite(e, id)
         :
         addFavorite(
           e,
-          props.id,
-          props.title,
-          props.src,
-          props.title,
+          id,
+          title,
+          src,
+          title,
         )}
       {...props}
     >
-      {isFavorite(props.id) ? 'Remove' : 'Add to favorites'}
+      {isFavorite(id) ? 'Remove' : 'Add to favorites'}
     </Btn>
   )
 }

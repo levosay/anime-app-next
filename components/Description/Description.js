@@ -1,9 +1,10 @@
+import Button from '../Button/Button'
+
 import {
   DescFace, DescImg, DescImgWrap, DescInfo,
   DescLable, DescSpan, DescText, DescTitle,
   DescWrap, Progress, ProgressLine
 } from './styled'
-import Button from '../Button/Button'
 
 const Description = ({
   ageRating, averageRating, title, img, description,

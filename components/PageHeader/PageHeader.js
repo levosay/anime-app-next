@@ -1,5 +1,6 @@
-import {Header, HeaderContainer} from './styled'
 import NavBar from '../NavBar/NavBar'
+
+import {Header, HeaderContainer} from './styled'
 
 const PageHeader = () => {
   return (

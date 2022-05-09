@@ -1,6 +1,7 @@
-import {LogoIcon, Nav, NavLink} from './styled'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
+
+import {LogoIcon, Nav, NavLink} from './styled'
 
 const NavBar = () => {
   const router = useRouter()

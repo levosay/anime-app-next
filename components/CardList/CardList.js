@@ -1,10 +1,13 @@
-import {CardItem, Img, Background, CardFooter, CardTitle, CardWrapper} from './styled'
 import Button from '../Button/Button'
 import Link from 'next/link'
 import InfiniteScroll from "react-infinite-scroll-component";
 import {useEffect, useState} from 'react'
 import getData from '../../pages/api'
 import {useSelector} from 'react-redux'
+
+import {
+  CardItem, Img, Background, CardFooter, CardTitle, CardWrapper
+} from './styled'
 
 const CardList = ({ animeItems, hasMoreFavorite = true }) => {
   const favoriteList = useSelector(state => state.favorite)
