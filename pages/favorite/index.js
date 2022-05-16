@@ -1,6 +1,6 @@
 import MainLayout from '../../layouts/MainLayout'
 import {useSelector} from 'react-redux'
-import CardList from '../../components/CardList/CardList'
+import CardListFavorite from '../../components/CardListFavorite/CardListFavorite'
 
 const Favorite = () => {
   const favoriteList = useSelector(state => state.favorite)
@@ -9,7 +9,7 @@ const Favorite = () => {
     <MainLayout>
       {favoriteList.length
         ?
-        <CardList
+        <CardListFavorite
           animeItems={favoriteList}
           hasMoreFavorite={false}
         />

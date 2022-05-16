@@ -5,25 +5,25 @@ import Description from '../../components/Description/Description'
 
 export const {publicRuntimeConfig: { FIRST_URL, FIND_URL }} = getConfig();
 
-const Detailed = (props) => {
+const Detailed = ({id, attributes}) => {
   return (
     <MainLayout>
       <Description
-        id={props.id}
-        ageRating={props.attributes.ageRating}
-        averageRating={props.attributes.averageRating}
-        title={props.attributes.canonicalTitle}
+        id={id}
+        ageRating={attributes.ageRating}
+        averageRating={attributes.averageRating}
+        title={attributes.canonicalTitle}
         img={
-        props.attributes.posterImage.large
-          ? props.attributes.posterImage.large
+        attributes.posterImage.large
+          ? attributes.posterImage.large
           : null
       }
-        description={props.attributes.description}
-        startDate={props.attributes.startDate}
-        endDate={props.attributes.endDate}
-        episodeCount={props.attributes.episodeCount}
-        status={props.attributes.status}
-        youtubeVideoId={props.attributes.youtubeVideoId}
+        description={attributes.description}
+        startDate={attributes.startDate}
+        endDate={attributes.endDate}
+        episodeCount={attributes.episodeCount}
+        status={attributes.status}
+        youtubeVideoId={attributes.youtubeVideoId}
       />
     </MainLayout>
   )

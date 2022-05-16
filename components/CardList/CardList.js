@@ -1,19 +1,15 @@
 import Button from '../Button/Button'
 import Link from 'next/link'
-import InfiniteScroll from "react-infinite-scroll-component";
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import getData from '../../pages/api'
-import {useSelector} from 'react-redux'
 
+import InfiniteScroll from "react-infinite-scroll-component";
 import {
   CardItem, Img, Background, CardFooter, CardTitle, CardWrapper
 } from './styled'
 
-const CardList = ({ animeItems, hasMoreFavorite = true }) => {
-  const favoriteList = useSelector(state => state.favorite)
-
+const CardList = ({ animeItems }) => {
   const [cards, setCards] = useState(animeItems)
-  const [hasMore, setHasMore] = useState(hasMoreFavorite)
 
   const getMorePost = async () => {
     const {data} = await getData(
@@ -22,15 +18,11 @@ const CardList = ({ animeItems, hasMoreFavorite = true }) => {
     setCards((post) => [...post, ...data])
   }
 
-  useEffect(() => {
-    setCards(animeItems)
-  }, [favoriteList])
-
   return (
     <InfiniteScroll
       next={getMorePost}
       dataLength={cards.length}
-      hasMore={hasMore}
+      hasMore={true}
       loader={<h3> Loading...</h3>}
     >
       <CardWrapper>

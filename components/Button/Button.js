@@ -11,7 +11,7 @@ const Button = ({onClick, id, src, title, ...props}) => {
     return favoriteList.some(item => item.id === id)
   }
 
-  const addFavorite = (event, id, key, src, title) => {
+  const addFavorite = ({event, id, src, title}) => {
     event.stopPropagation()
     setFavorite({
       id: id,
@@ -31,15 +31,16 @@ const Button = ({onClick, id, src, title, ...props}) => {
 
   return (
     <Btn
-      onClick={(e) => isFavorite(id) ?
-        remFavorite(e, id)
+      onClick={(event) => isFavorite(id) ?
+        remFavorite(event, id)
         :
         addFavorite(
-          e,
-          id,
-          title,
-          src,
-          title,
+          {
+            event,
+            id,
+            src,
+            title
+          }
         )}
       {...props}
     >
