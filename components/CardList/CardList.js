@@ -1,7 +1,7 @@
-import Button from '../Button/Button'
+import Button from '@/Button/Button'
 import Link from 'next/link'
 import {useState} from 'react'
-import {getAmountData} from '../../api'
+import {getAmountData} from 'api'
 
 import InfiniteScroll from "react-infinite-scroll-component";
 import {

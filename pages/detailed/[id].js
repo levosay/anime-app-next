@@ -1,11 +1,10 @@
-import MainLayout from '../../layouts/MainLayout'
-import Description from '../../components/Description/Description'
-import {FindData, initData} from '../../api'
-import Meta from '../../components/Meta'
+import Description from 'components/Description/Description'
+import {FindData, initData} from 'api'
+import Meta from 'components/Meta'
 
 const Detailed = ({id, attributes}) => {
   return (
-    <MainLayout>
+    <>
       <Meta
         meta={{
           title: attributes.canonicalTitle,
@@ -28,7 +27,7 @@ const Detailed = ({id, attributes}) => {
         status={attributes.status}
         youtubeVideoId={attributes.youtubeVideoId}
       />
-    </MainLayout>
+    </>
   )
 }
 
