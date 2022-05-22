@@ -1,10 +1,16 @@
 import MainLayout from '../../layouts/MainLayout'
 import Description from '../../components/Description/Description'
 import {FindData, initData} from '../../api'
+import Meta from '../../components/Meta'
 
 const Detailed = ({id, attributes}) => {
   return (
     <MainLayout>
+      <Meta
+        meta={{
+          title: attributes.canonicalTitle,
+        }}
+      />
       <Description
         id={id}
         ageRating={attributes.ageRating}
