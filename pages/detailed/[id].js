@@ -1,9 +1,6 @@
 import MainLayout from '../../layouts/MainLayout'
-import getData from '../api'
-import getConfig from 'next/config';
 import Description from '../../components/Description/Description'
-
-export const {publicRuntimeConfig: { FIRST_URL, FIND_URL }} = getConfig();
+import {FindData, initData} from '../../api'
 
 const Detailed = ({id, attributes}) => {
   return (
@@ -30,7 +27,7 @@ const Detailed = ({id, attributes}) => {
 }
 
 export const getStaticPaths = async ()  => {
-  const { data } = await getData(FIRST_URL.toString())
+  const {data} = await initData()
 
   const paths = data.map((item) => {
     return {
@@ -52,7 +49,7 @@ export const getStaticProps = async ({ params }) => {
       notFound: true
     }
   } else {
-    const { data } = await getData(`${FIND_URL}${params.id}`)
+    const data = await FindData(params.id)
 
     return {
       props: data

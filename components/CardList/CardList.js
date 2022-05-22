@@ -1,7 +1,7 @@
 import Button from '../Button/Button'
 import Link from 'next/link'
 import {useState} from 'react'
-import getData from '../../pages/api'
+import {getAmountData} from '../../api'
 
 import InfiniteScroll from "react-infinite-scroll-component";
 import {
@@ -12,9 +12,8 @@ const CardList = ({ animeItems }) => {
   const [cards, setCards] = useState(animeItems)
 
   const getMorePost = async () => {
-    const {data} = await getData(
-      process.env.NEXT_PUBLIC_FIRST_URL + cards.length
-    )
+    const data = await getAmountData(cards.length)
+
     setCards((post) => [...post, ...data])
   }
 

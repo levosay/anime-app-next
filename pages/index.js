@@ -2,13 +2,11 @@ import Head from 'next/head'
 import MainLayout from '../layouts/MainLayout'
 import CardList from '../components/CardList/CardList'
 import {useState} from 'react'
-import getData from './api'
-import getConfig from 'next/config';
+import {initData} from '../api'
 
-export const {publicRuntimeConfig: { FIRST_URL }} = getConfig();
 
 export default function Home(props) {
-  const [data, setData] = useState(props.data)
+  const [data] = useState(props.data)
 
   return (
     <MainLayout>
@@ -25,7 +23,7 @@ export default function Home(props) {
 }
 
 export const getStaticProps = async () => {
-  const data = await getData(FIRST_URL)
+  const data = await initData()
 
   return {
     props: data
