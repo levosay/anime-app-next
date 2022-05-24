@@ -1,9 +1,10 @@
-import {createStore} from 'redux';
-import {createWrapper} from 'next-redux-wrapper';
-import {reducer} from './reducers'
+import {configureStore} from '@reduxjs/toolkit'
+import {reducer} from './favorite'
 
-// create a makeStore function
-const makeStore = (context) => createStore(reducer);
-
-// export an assembled wrapper
-export const wrapper = createWrapper(makeStore, {debug: true});
+export default configureStore({
+  reducer: reducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+})

@@ -1,15 +1,17 @@
-// import 'styles/globals.css'
+import { Provider } from 'react-redux';
 import React from 'react'
-import {wrapper} from 'store'
+import store from 'store/index';
 import MainLayout from 'layouts/MainLayout'
 
 const WrappedApp = ({Component, pageProps}) => (
-  <MainLayout>
-    <Component {...pageProps} />
-  </MainLayout>
+  <Provider store={store}>
+    <MainLayout>
+      <Component {...pageProps} />
+    </MainLayout>
+  </Provider>
 )
 
-export default wrapper.withRedux(WrappedApp)
+export default WrappedApp
 
 
 
