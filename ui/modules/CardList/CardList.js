@@ -1,9 +1,11 @@
-import Button from '@/Button/Button'
 import Link from 'next/link'
 import {useState} from 'react'
 import {getAmountData} from 'api'
+import ButtonFavorite from '../ButtonFavorite/ButtonFavorite'
+
 
 import InfiniteScroll from "react-infinite-scroll-component";
+
 import {
   CardItem, Img, Background, CardFooter, CardTitle, CardWrapper
 } from './styled'
@@ -41,7 +43,7 @@ const CardList = ({ animeItems }) => {
                 <CardTitle>
                   {item.attributes.canonicalTitle}
                 </CardTitle>
-                <Button
+                <ButtonFavorite
                   id={item.id}
                   title={item.attributes.canonicalTitle}
                   src={item.attributes.posterImage.large}

@@ -1,7 +1,7 @@
-import Button from '@/Button/Button'
 import Link from 'next/link'
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
+import ButtonFavorite from '../ButtonFavorite/ButtonFavorite'
 
 import {
   CardItem, Img, Background, CardFooter, CardTitle, CardWrapper
@@ -33,7 +33,7 @@ const CardListFavorite = ({ animeItems }) => {
               <CardTitle>
                 {item.attributes.canonicalTitle}
               </CardTitle>
-              <Button
+              <ButtonFavorite
                 id={item.id}
                 title={item.attributes.canonicalTitle}
                 src={item.attributes.posterImage.large}

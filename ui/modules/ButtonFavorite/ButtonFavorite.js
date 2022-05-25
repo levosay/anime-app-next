@@ -1,9 +1,9 @@
 import {useDispatch, useSelector} from 'react-redux'
 
-import { Btn } from './styled'
-import {removeFavoriteAction, setFavoriteAction} from '../../store/favorite'
+import {removeFavoriteAction, setFavoriteAction} from 'store/favorite'
+import Button from 'ui/components/Button/Button'
 
-const Button = ({onClick, id, src, title, ...props}) => {
+const ButtonFavorite = ({id, src, title}) => {
   const dispatch = useDispatch()
   const favoriteList = useSelector(state => state.favorite)
 
@@ -30,7 +30,7 @@ const Button = ({onClick, id, src, title, ...props}) => {
   }
 
   return (
-    <Btn
+    <Button
       onClick={(event) => isFavorite(id) ?
         remFavorite(event, id)
         :
@@ -42,11 +42,10 @@ const Button = ({onClick, id, src, title, ...props}) => {
             title
           }
         )}
-      {...props}
     >
       {isFavorite(id) ? 'Remove' : 'Add to favorites'}
-    </Btn>
+    </Button>
   )
 }
 
-export default Button
+export default ButtonFavorite

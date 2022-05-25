@@ -1,6 +1,6 @@
-import Description from 'components/Description/Description'
+import Description from 'ui/components/Description/Description'
 import {FindData, initData} from 'api'
-import Meta from 'components/Meta'
+import Meta from 'ui/components/Meta'
 
 const Detailed = ({id, attributes}) => {
   return (

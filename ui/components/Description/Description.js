@@ -1,4 +1,4 @@
-import Button from '@/Button/Button'
+import ButtonFavorite from '../../modules/ButtonFavorite/ButtonFavorite'
 
 import {
   DescFace, DescImg, DescImgWrap, DescInfo,
@@ -47,7 +47,7 @@ const Description = ({
         <DescSpan>
           {startDate} - {endDate}
         </DescSpan>
-        <Button
+        <ButtonFavorite
           id={id}
           title={title}
           src={img}

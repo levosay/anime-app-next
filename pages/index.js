@@ -1,7 +1,7 @@
-import CardList from 'components/CardList/CardList'
+import CardList from 'ui/modules/CardList/CardList'
 import {useState} from 'react'
 import {initData} from 'api'
-import Meta from 'components/Meta'
+import Meta from 'ui/components/Meta'
 
 
 export default function Home(props) {

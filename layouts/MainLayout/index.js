@@ -1,4 +1,4 @@
-import PageHeader from 'components/PageHeader/PageHeader'
+import PageHeader from 'ui/components/PageHeader/PageHeader'
 import {Container} from './styled'
 
 const MainLayout = ({ children }) => {
