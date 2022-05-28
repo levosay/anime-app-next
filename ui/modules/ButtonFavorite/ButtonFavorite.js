@@ -11,6 +11,7 @@ const ButtonFavorite = ({id, src, title}) => {
   }, [id, favoriteList])
 
   const addFavorite = ({event, id, src, title}) => {
+    event.preventDefault()
     event.stopPropagation()
     dispatch(setFavoriteAction({
       id: id,
@@ -24,6 +25,7 @@ const ButtonFavorite = ({id, src, title}) => {
   }
 
   const remFavorite = (event, id) => {
+    event.preventDefault()
     event.stopPropagation()
     dispatch(removeFavoriteAction(id))
   }
