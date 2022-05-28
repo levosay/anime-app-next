@@ -1,6 +1,6 @@
 import CardList from 'ui/modules/CardList/CardList'
 import {useState} from 'react'
-import {initData} from 'api'
+import {initData} from 'api/anime'
 import Meta from 'ui/components/Meta'
 
 

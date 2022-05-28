@@ -1,27 +1,22 @@
-import getData from './axios'
-import getConfig from 'next/config'
+import axios from 'api/axios'
 
-export const {
-  publicRuntimeConfig: { API_URL },
-} = getConfig()
+const makeRequest = async (config = {}) => {
+  try {
+    return await axios(config)
+  } catch (error) {
+    const code =
+      error.code ||
+      error.status ||
+      (error.response && error.response.status) ||
+      500;
 
-
-export const initData = async () => {
-  return await getData(
-    `${API_URL}?page%5Blimit%5D=20&page%5Boffset%5D=0`
-  )
+    return {
+      code: error.code,
+      status: error.status,
+      errorMessage: `${code}: ${error.message}`,
+      ...error.response,
+    }
+  }
 }
 
-export const getAmountData = async (amount) => {
-  const {data} = await getData(
-    `${API_URL}?page%5Blimit%5D=20&page%5Boffset%5D=${amount}`
-  )
-  return data
-}
-
-export const FindData = async (amount) => {
-  const {data} = await getData(
-    `${API_URL}${amount}`
-  )
-  return data
-}
+export default makeRequest

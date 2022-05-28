@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import {useState} from 'react'
-import {getAmountData} from 'api'
+import {getAmountData} from 'api/anime'
 import ButtonFavorite from '../ButtonFavorite/ButtonFavorite'
 
 
@@ -14,7 +14,7 @@ const CardList = ({ animeItems }) => {
   const [cards, setCards] = useState(animeItems)
 
   const getMorePost = async () => {
-    const data = await getAmountData(cards.length)
+    const {data} = await getAmountData(cards.length)
 
     setCards((post) => [...post, ...data])
   }

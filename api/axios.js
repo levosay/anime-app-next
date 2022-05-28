@@ -1,11 +1,21 @@
 import axios from 'axios';
+import getConfig from 'next/config'
 
-const getData = async (url) => {
-  const {data} = await axios({
-    method: 'GET',
-    url: url
-  })
-  return data
-}
+export const {
+  publicRuntimeConfig: { baseURL },
+} = getConfig()
 
-export default getData
+const instance = axios.create({
+  baseURL,
+})
+
+instance.interceptors.response.use(
+  function (response) {
+    return response?.data
+  },
+  function (error) {
+    return Promise.reject(error)
+  }
+)
+
+export default instance
