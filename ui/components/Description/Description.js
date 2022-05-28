@@ -6,10 +6,7 @@ import {
   DescWrap, Progress, ProgressLine
 } from './styled'
 
-const Description = ({
-  ageRating, averageRating, title, img, description,
-  startDate, endDate, status, id
-}) => {
+const Description = ({id, attributes}) => {
   const drawRating = (value = 50) => {
     const roundedValue = `${Math.floor(value)}%`
 
@@ -24,6 +21,14 @@ const Description = ({
     )
   }
 
+  const isLogo = () => {
+    if (attributes.posterImage.large) {
+      return attributes.posterImage.large
+    } else {
+      return null
+    }
+  }
+
   return (
     <DescWrap>
       <DescFace>
@@ -32,33 +37,33 @@ const Description = ({
             side={'left: 10px;'}
             color={'darkred'}
           >
-            {status}
+            {attributes.status}
           </DescLable>
           <DescLable
             side={'right: 10px;'}
           >
-            {ageRating}
+            {attributes.ageRating}
           </DescLable>
           <DescImg
-            src={img}
+            src={isLogo()}
           />
-          {drawRating(averageRating)}
+          {drawRating(attributes.averageRating)}
         </DescImgWrap>
         <DescSpan>
-          {startDate} - {endDate}
+          {attributes.startDate} - {attributes.endDate}
         </DescSpan>
         <ButtonFavorite
           id={id}
-          title={title}
-          src={img}
+          title={attributes.canonicalTitle}
+          src={isLogo()}
         />
       </DescFace>
       <DescInfo>
         <DescTitle>
-          {title}
+          {attributes.canonicalTitle}
         </DescTitle>
         <DescText>
-          {description}
+          {attributes.description}
         </DescText>
       </DescInfo>
     </DescWrap>

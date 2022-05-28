@@ -12,20 +12,7 @@ const Detailed = ({id, attributes}) => {
       />
       <Description
         id={id}
-        ageRating={attributes.ageRating}
-        averageRating={attributes.averageRating}
-        title={attributes.canonicalTitle}
-        img={
-        attributes.posterImage.large
-          ? attributes.posterImage.large
-          : null
-      }
-        description={attributes.description}
-        startDate={attributes.startDate}
-        endDate={attributes.endDate}
-        episodeCount={attributes.episodeCount}
-        status={attributes.status}
-        youtubeVideoId={attributes.youtubeVideoId}
+        attributes={attributes}
       />
     </>
   )
