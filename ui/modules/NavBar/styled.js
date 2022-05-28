@@ -10,17 +10,14 @@ export const LogoIcon = styled.img`
   margin-right: 100px;
 `
 
-export const NavLink = styled.span`
+export const NavText = styled.span`
   font-size: 38px;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 1px 1px 3px #666;
   color: ${props => props.color || '#f5f5f7'};
   cursor: pointer;
-
-  &:not(:last-child) {
-    margin-right: 50px;
-  }
+  margin-right: 50px;
   
   &:hover {
     color: rebeccapurple;

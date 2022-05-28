@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import {useRouter} from 'next/router'
 
-import {LogoIcon, Nav, NavLink} from './styled'
+import {LogoIcon, Nav, NavText} from './styled'
+import NavLink from '@/NavLink/NavLink'
 
 const NavBar = () => {
   const router = useRouter()
@@ -17,20 +17,20 @@ const NavBar = () => {
   return (
     <Nav>
       <LogoIcon src={'/logo.png'} />
-      <Link href="/" passHref>
-        <NavLink
+      <NavLink href="/" passHref>
+        <NavText
           color={chooseColor('/')}
         >
           Home
-        </NavLink>
-      </Link>
-      <Link href="/favorite" passHref>
-        <NavLink
+        </NavText>
+      </NavLink>
+      <NavLink href="/favorite" passHref>
+        <NavText
           color={chooseColor('/favorite')}
         >
           Favorite
-        </NavLink>
-      </Link>
+        </NavText>
+      </NavLink>
     </Nav>
   )
 }
