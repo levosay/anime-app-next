@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
-import Card from '../../components/Card/Card'
+import Card from 'ui/components/Card/Card'
 
 const CardListFavorite = ({ animeItems }) => {
   const favoriteList = useSelector(state => state.favorite)

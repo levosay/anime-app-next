@@ -1,4 +1,4 @@
-import ButtonFavorite from '../../modules/ButtonFavorite/ButtonFavorite'
+import ButtonFavorite from 'ui/modules/ButtonFavorite/ButtonFavorite'
 
 import {
   DescFace, DescImg, DescImgWrap, DescInfo,

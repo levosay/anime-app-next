@@ -1,6 +1,6 @@
 import {useSelector} from 'react-redux'
 import CardListFavorite from 'ui/modules/CardListFavorite/CardListFavorite'
-import Meta from 'ui/components/Meta'
+import Meta from '@/Meta'
 
 const Favorite = () => {
   const favoriteList = useSelector(state => state.favorite)

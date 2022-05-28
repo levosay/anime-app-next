@@ -1,6 +1,6 @@
 import React from 'react'
-import ButtonFavorite from '../../modules/ButtonFavorite/ButtonFavorite'
-import NavLink from '../NavLink/NavLink'
+import ButtonFavorite from 'ui/modules/ButtonFavorite/ButtonFavorite'
+import NavLink from '@/NavLink/NavLink'
 
 import {
   CardWrapper, Img, CardItem, CardTitle, CardFooter, Background

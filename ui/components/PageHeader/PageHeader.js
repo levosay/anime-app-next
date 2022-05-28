@@ -1,4 +1,4 @@
-import NavBar from '../../modules/NavBar/NavBar'
+import NavBar from 'ui/modules/NavBar/NavBar'
 
 import {Header, HeaderContainer} from './styled'
 

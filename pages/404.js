@@ -1,4 +1,4 @@
-import Meta from 'ui/components/Meta'
+import Meta from '@/Meta'
 
 export default function Custom404() {
   return (

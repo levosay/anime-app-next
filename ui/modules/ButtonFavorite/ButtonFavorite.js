@@ -1,8 +1,7 @@
 import {useDispatch, useSelector} from 'react-redux'
-
+import {useMemo} from 'react'
 import {removeFavoriteAction, setFavoriteAction} from 'store/favorite'
 import Button from 'ui/components/Button/Button'
-import {useMemo} from 'react'
 
 const ButtonFavorite = ({id, src, title}) => {
   const dispatch = useDispatch()

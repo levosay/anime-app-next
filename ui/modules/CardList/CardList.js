@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import {getAmountData} from 'api/anime'
 import InfiniteScroll from "react-infinite-scroll-component";
-import Card from '../../components/Card/Card'
+import Card from 'ui/components/Card/Card'
 
 const CardList = ({ animeItems }) => {
   const [cards, setCards] = useState(animeItems)
