@@ -1,5 +1,5 @@
 import Description from 'ui/components/Description/Description'
-import {FindData, initData} from 'api/anime'
+import {findData, initData} from 'api/anime'
 import Meta from 'ui/components/Meta'
 
 const Detailed = ({id, attributes}) => {
@@ -54,7 +54,7 @@ export const getStaticProps = async ({ params }) => {
       notFound: true
     }
   } else {
-    const {data} = await FindData(params.id)
+    const {data} = await findData(params.id)
 
     return {
       props: data

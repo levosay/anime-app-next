@@ -2,14 +2,14 @@ import {useDispatch, useSelector} from 'react-redux'
 
 import {removeFavoriteAction, setFavoriteAction} from 'store/favorite'
 import Button from 'ui/components/Button/Button'
+import {useMemo} from 'react'
 
 const ButtonFavorite = ({id, src, title}) => {
   const dispatch = useDispatch()
   const favoriteList = useSelector(state => state.favorite)
-
-  const isFavorite = (id) => {
+  const isFavorite = useMemo(() => {
     return favoriteList.some(item => item.id === id)
-  }
+  }, [id, favoriteList])
 
   const addFavorite = ({event, id, src, title}) => {
     event.stopPropagation()
@@ -29,21 +29,34 @@ const ButtonFavorite = ({id, src, title}) => {
     dispatch(removeFavoriteAction(id))
   }
 
+  const selectHandler = (event) => {
+    if (isFavorite) {
+      remFavorite(event, id)
+    } else {
+      addFavorite(
+        {
+          event,
+          id,
+          src,
+          title
+        }
+      )
+    }
+  }
+
+  const titleBtnFavorite = () => {
+    if (isFavorite) {
+      return 'Remove'
+    } else {
+      return 'Add to favorites'
+    }
+  }
+
   return (
     <Button
-      onClick={(event) => isFavorite(id) ?
-        remFavorite(event, id)
-        :
-        addFavorite(
-          {
-            event,
-            id,
-            src,
-            title
-          }
-        )}
+      onClick={(event) => selectHandler(event)}
     >
-      {isFavorite(id) ? 'Remove' : 'Add to favorites'}
+      {titleBtnFavorite()}
     </Button>
   )
 }

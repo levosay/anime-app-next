@@ -1,8 +1,7 @@
 import {createAction, createReducer} from '@reduxjs/toolkit'
-import {SET_FAVORITE, REMOVE_FAVORITE} from '../../constant/storeTypes'
 
-export const setFavoriteAction = createAction(SET_FAVORITE)
-export const removeFavoriteAction = createAction(REMOVE_FAVORITE)
+export const setFavoriteAction = createAction('SET_FAVORITE')
+export const removeFavoriteAction = createAction('REMOVE_FAVORITE')
 
 const initialState = {
   favorite: []

@@ -14,7 +14,7 @@ export const getAmountData = async (amount) => {
   })
 }
 
-export const FindData = async (amount) => {
+export const findData = async (amount) => {
   return await makeRequest({
     method: 'GET',
     url: `/${amount}`

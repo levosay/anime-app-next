@@ -1,11 +1,6 @@
-import Link from 'next/link'
 import {useEffect, useState} from 'react'
 import {useSelector} from 'react-redux'
-import ButtonFavorite from '../ButtonFavorite/ButtonFavorite'
-
-import {
-  CardItem, Img, Background, CardFooter, CardTitle, CardWrapper
-} from './styled'
+import Card from '../../components/Card/Card'
 
 const CardListFavorite = ({ animeItems }) => {
   const favoriteList = useSelector(state => state.favorite)
@@ -16,33 +11,9 @@ const CardListFavorite = ({ animeItems }) => {
   }, [favoriteList])
 
   return (
-    <CardWrapper>
-      {cards.map(item => (
-        <Link
-          key={item.attributes.canonicalTitle}
-          href={`/detailed/${item.id}`}
-          passHref
-        >
-          <CardItem>
-            <Background/>
-            <Img
-              src={item.attributes.posterImage.large}
-              alt={item.attributes.canonicalTitle}
-            />
-            <CardFooter>
-              <CardTitle>
-                {item.attributes.canonicalTitle}
-              </CardTitle>
-              <ButtonFavorite
-                id={item.id}
-                title={item.attributes.canonicalTitle}
-                src={item.attributes.posterImage.large}
-              />
-            </CardFooter>
-          </CardItem>
-        </Link>
-      ))}
-    </CardWrapper>
+    <Card
+      cards={cards}
+    />
   )
 }
 

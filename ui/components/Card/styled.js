@@ -45,8 +45,6 @@ export const CardItem = styled.div`
   overflow: hidden;
   border-radius: 10px;
   cursor: pointer;
-  -webkit-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   box-shadow: 5px 5px 8px 0 rgba(34, 60, 80, 0.2);
   margin: auto;
 
@@ -64,14 +62,6 @@ export const CardItem = styled.div`
       transform: scale(1.05);
     }
   }
-`
-
-export const CardLink = styled.a`
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  cursor: pointer;
 `
 
 export const CardTitle = styled.h4`
