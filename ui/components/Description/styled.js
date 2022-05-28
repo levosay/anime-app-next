@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {PALETTE} from '../../../constant/constants'
+import {PALETTE} from 'constant/constants'
 
 export const DescWrap = styled.div`
   display: flex;
